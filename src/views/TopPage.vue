@@ -33,9 +33,13 @@
         </v-tabs>
       </template>
     </v-app-bar>
-    <v-main class="mx-4 mb-4 gray lighten-5">
-      <h2>aaa</h2>
-
+    <v-main class="mb-4 bg-blue-lighten-5">
+      <v-container class="my-3">
+      <v-alert
+      type="info"
+      variant="tonal"
+    >
+     現在準備中です。</v-alert>
       <v-card
     class="mx-auto pa-2"
     max-width="300"
@@ -64,7 +68,7 @@
       </v-list-item>
     </v-list>
   </v-card>
-
+</v-container>
     </v-main>
   </v-app>
 </template>
