@@ -1,18 +1,46 @@
 <template>
   <v-sheet rounded="lg">
-    <v-list rounded="lg">
+    <v-list rounded="lg" class="hidden-sm-and-down">
       <template v-for="nav_list in nav_lists">
-        <v-list-item color="primary" active-color="primary" :to="nav_list.link" variant="plain">
-          <template v-slot:prepend>
-          <v-icon :icon="nav_list.icon"></v-icon>
-        </template>
+        <v-list-item color="primary" active-color="primary" :to="nav_list.link">
+          <template v-slot:prepend><v-icon :icon="nav_list.icon"></v-icon></template>
           <v-list-item-content>
-            
             <v-list-item-title>{{ nav_list.page }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </template>
+      <v-divider></v-divider>
+      <v-list-item scolor="primary" active-color="primary"  to="/">
+        <template v-slot:prepend><v-icon>mdi-arrow-u-left-top</v-icon></template>
+        <v-list-item-content>
+          <v-list-item-title>ログイン画面に戻る</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
     </v-list>
+    <v-expansion-panels class="hidden-md-and-up elevation-0">
+      <v-expansion-panel rounded="lg" elevation="0">
+        <v-expansion-panel-title>マップメニュー</v-expansion-panel-title>
+        <v-expansion-panel-text class="px-4 mx-n8 mb-n3">
+          <v-list rounded="lg">
+            <template v-for="nav_list in nav_lists">
+              <v-list-item color="primary" active-color="primary" :to="nav_list.link">
+                <template v-slot:prepend><v-icon :icon="nav_list.icon"></v-icon></template>
+                <v-list-item-content>
+                  <v-list-item-title>{{ nav_list.page }}</v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </template>
+            <v-divider></v-divider>
+            <v-list-item scolor="primary" active-color="primary"  to="/">
+              <template v-slot:prepend><v-icon>mdi-arrow-u-left-top</v-icon></template>
+              <v-list-item-content>
+                <v-list-item-title>ログイン画面に戻る</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list>
+        </v-expansion-panel-text>
+      </v-expansion-panel>
+    </v-expansion-panels>
   </v-sheet>
 </template>
 <script>

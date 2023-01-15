@@ -1,73 +1,52 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer app v-model="drawer" color="pink accent-2" >
+    <v-navigation-drawer app v-model="drawer" color="blue accent-2" >
       <v-list>
-      <v-list-subheader>MENU</v-list-subheader>
-
-      <v-list-item
-      style="color:white"
-        rounded="xl"
-        value="1"
-        :to="{name: 'home'}"
-      >
-        
-      <template v-slot:prepend><v-icon color="white">mdi-account</v-icon></template>
-        
-        <v-list-item-title>あ</v-list-item-title>
-      </v-list-item>
-    </v-list>
+        <v-list-subheader style="color:white">メニュー</v-list-subheader>
+        <v-list-item style="color:white" rounded="xl" value="1" to="/about">
+          <template v-slot:prepend><v-icon color="white">mdi-account</v-icon></template>
+          <v-list-item-title>このサイトについて</v-list-item-title>
+        </v-list-item>
+        <v-list-item style="color:white" rounded="xl" value="1" to="/credits">
+          <template v-slot:prepend><v-icon color="white">mdi-wrench</v-icon></template>
+          <v-list-item-title>クレジット</v-list-item-title>
+        </v-list-item>
+        <v-list-item style="color:white" rounded="xl" value="1" href="#">
+          <template v-slot:prepend><v-icon color="white">mdi-open-in-new</v-icon></template>
+          <v-list-item-title>学校ホームページへ</v-list-item-title>
+        </v-list-item>
+        <v-list-item style="color:white" rounded="xl" value="1" href="#">
+          <template v-slot:prepend><v-icon color="white">mdi-rabbit</v-icon></template>
+          <v-list-item-title>公式ホームページへ</v-list-item-title>
+        </v-list-item>
+      </v-list>
     </v-navigation-drawer>
     <v-app-bar class="gray lighten-5" app dense elevate-on-scroll>
-      <v-app-bar-nav-icon
-        @click="drawer = !drawer"
-      ></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title class="text-uppercase black--text mt-1">
-        <span><router-link :to=" { name: 'home' } ">KUSS-WebMap</router-link></span>
+        <span><img src="/logo.svg" alt="KUSS-WebMap" class="mt-3"></span>
       </v-toolbar-title>
-      <template v-slot:extension>
-        <v-tabs align-with-title fixed-tabs>
-          <v-tabs-slider color="yellow"></v-tabs-slider>
-          <v-tab><v-icon>mdi-home</v-icon></v-tab>
-          <v-tab><v-icon>mdi-magnify</v-icon></v-tab>
-          <v-tab><v-icon>mdi-account</v-icon></v-tab>
-        </v-tabs>
-      </template>
     </v-app-bar>
-    <v-main class="mb-4 bg-blue-lighten-5">
+    <v-main class="mb-4" style="background-color:#f1f3f5">
       <v-container class="my-3">
-      <v-alert
-      type="info"
-      variant="tonal"
-    >
-     現在準備中です。</v-alert>
-      <v-card
-    class="mx-auto pa-2"
-    max-width="300"
-  >
-    <v-list nav>
-      <v-list-subheader>REPORTS</v-list-subheader>
-
-      <v-list-item
-        active-color="primary"
-        rounded="xl"
-        value="1"
-      >
-      <template v-slot:prepend><v-icon>mdi-account</v-icon></template>
-
-        <v-list-item-title>あ</v-list-item-title>
-      </v-list-item>
-
-      <v-list-item
-        active-color="primary"
-        rounded="xl"
-        value="1"
-      >
-      <template v-slot:prepend><v-icon>mdi-lock</v-icon></template>
-
-        <v-list-item-title>ｓｊｂあ</v-list-item-title>
-      </v-list-item>
-    </v-list>
-  </v-card>
+      <v-alert type="info" variant="outlined">現在準備中です。</v-alert>
+      <v-card class="mx-auto pa-4" max-width="400">
+        <v-card-title class="d-flex justify-center pa-0 mb-2">ログイン</v-card-title>
+        <v-form class="mx-3" @submit.prevent ref="form">
+          <v-text-field
+            placeholder="パスワード"
+            label="パスワード"
+            hint="半角英数字のパスワードを入力"
+            :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+            :type="show ? 'text' : 'password'"
+            counter="10"
+            @click:append="show = !show"
+          ></v-text-field>
+          <div class="text-center">
+            <v-btn @click="submit" class="primary" to="/home">移動</v-btn>
+          </div>
+        </v-form>
+      </v-card>
 </v-container>
     </v-main>
   </v-app>
@@ -78,20 +57,11 @@ export default {
   data(){
     return{
           drawer: false,
-    items: [
-        {
-          text: 'Item #1',
-          icon: "mdi-home",
-        },
-        {
-          text: 'Item #2',
-          icon: "mdi-home",
-        },
-      ],
     }
   }
 }
 </script>
+
 <style>
 a {
   text-decoration:none;
