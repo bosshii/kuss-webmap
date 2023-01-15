@@ -4,7 +4,7 @@
       <v-list>
         <v-list-subheader style="color:white">メニュー</v-list-subheader>
         <v-list-item style="color:white" rounded="xl" value="1" to="/about">
-          <template v-slot:prepend><v-icon color="white">mdi-account</v-icon></template>
+          <template v-slot:prepend><v-icon color="white">mdi-information-outline</v-icon></template>
           <v-list-item-title>このサイトについて</v-list-item-title>
         </v-list-item>
         <v-list-item style="color:white" rounded="xl" value="1" to="/credits">

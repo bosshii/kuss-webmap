@@ -10,6 +10,12 @@
         </v-list-item>
       </template>
       <v-divider></v-divider>
+      <v-list-item scolor="primary" active-color="primary"  to="/docs">
+        <template v-slot:prepend><v-icon>mdi-note-text</v-icon></template>
+        <v-list-item-content>
+          <v-list-item-title>資料</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
       <v-list-item scolor="primary" active-color="primary"  to="/">
         <template v-slot:prepend><v-icon>mdi-arrow-u-left-top</v-icon></template>
         <v-list-item-content>
@@ -31,6 +37,12 @@
               </v-list-item>
             </template>
             <v-divider></v-divider>
+            <v-list-item scolor="primary" active-color="primary"  to="/docs">
+              <template v-slot:prepend><v-icon>mdi-note-text</v-icon></template>
+              <v-list-item-content>
+                <v-list-item-title>資料</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
             <v-list-item scolor="primary" active-color="primary"  to="/">
               <template v-slot:prepend><v-icon>mdi-arrow-u-left-top</v-icon></template>
               <v-list-item-content>
@@ -61,7 +73,27 @@ export default {
             link: "/map/a"
           },
           {
-            page: "その他",
+            page: "B棟",
+            icon: "mdi-alpha-b-box-outline",
+            link: "/map/b"
+          },
+          {
+            page: "C棟",
+            icon: "mdi-alpha-c-box-outline",
+            link: "/map/c"
+          },
+          {
+            page: "D棟",
+            icon: "mdi-alpha-d-box-outline",
+            link: "/map/d"
+          },
+          {
+            page: "E棟",
+            icon: "mdi-alpha-e-box-outline",
+            link: "/map/e"
+          },
+          {
+            page: "体育館・中庭など",
             icon: "mdi-map-search",
             link: "/map/others"
           },
@@ -69,11 +101,6 @@ export default {
             page: "使い方",
             icon: "mdi-help",
             link: "/help"
-          },
-          {
-            page: "棟",
-            icon: "mdi-note-text",
-            link: "/map/a"
           },
         ],
     }

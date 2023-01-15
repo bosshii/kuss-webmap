@@ -57,6 +57,11 @@ const routes = [
     path: '/navi',
     name: 'navi',
     component: () => import(/* webpackChunk//name: "about" */ '../views/Navi.vue')
+  },
+  {
+    path: '/docs',
+    name: 'docs',
+    component: () => import('../views/Docs.vue')
   }
 ]
 
