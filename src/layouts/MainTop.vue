@@ -2,7 +2,7 @@
   <v-navigation-drawer app v-model="drawer" color="blue accent-2" >
     <v-list>
       <v-list-subheader style="color:white">メインメニュー</v-list-subheader>
-      <v-list-item rounded="xl" value="1" to="/home">
+      <v-list-item rounded="xl" value="1" to="/home" v-if="!toppage">
         <template v-slot:prepend><v-icon color="white">mdi-home</v-icon></template>
         <v-list-item-title>ホーム画面</v-list-item-title>
       </v-list-item>
@@ -22,8 +22,8 @@
         <template v-slot:prepend><v-icon>mdi-rabbit</v-icon></template>
         <v-list-item-title>公式ホームページへ</v-list-item-title>
       </v-list-item>
-      <v-divider></v-divider>
-      <v-list-item rounded="xl" value="6" to="/">
+      <v-divider v-if="!toppage"></v-divider>
+      <v-list-item rounded="xl" value="6" to="/" v-if="!toppage">
         <template v-slot:prepend><v-icon>mdi-arrow-u-left-top</v-icon></template>
         <v-list-item-title>ログイン画面に戻る</v-list-item-title>
       </v-list-item>
@@ -35,7 +35,7 @@
       <span class="text-uppercase black--text ml-2 mt-1 mr-3">
         <router-link :to=" { name: 'home' } "><img src="/logo.svg" style="width:35vw; max-width:300px" alt="KUSS-WebMap" class="mt-3"></router-link>
       </span>
-      <v-menu transition="slide-y-transition">
+      <v-menu transition="slide-y-transition" v-if="!toppage">
         <template v-slot:activator="{ props }">
           <v-btn color="primary" v-bind="props" prepend-icon="mdi-chevron-down" variant="outlined">モード</v-btn>
         </template>
@@ -51,7 +51,7 @@
         </v-list>
       </v-menu>
       <v-spacer></v-spacer>
-      <v-dialog v-model="legend" width="500px">
+      <v-dialog v-model="legend" width="500px" v-if="!toppage">
         <template v-slot:activator="{ props }">
           <v-btn v-bind="props" prepend-icon="mdi-help" rounded="pill" class="legendbtn bg-primary">凡例</v-btn>
         </template>
@@ -69,12 +69,13 @@
   </v-app-bar>
 </template>
 <script>
-  export default {
+export default {
+    props: ['toppage'],
     data: () => ({
-      drawer: false,
-      legend: false,
-    }),
-  }
+          drawer: false,
+          legend: false,
+        }),
+}
 </script>
 <style>
 .legendbtn {
