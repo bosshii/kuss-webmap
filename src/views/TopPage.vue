@@ -23,7 +23,7 @@
     </v-navigation-drawer>
     <v-app-bar class="gray lighten-5" app dense elevate-on-scroll>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title class="text-uppercase black--text mt-1">
+      <v-toolbar-title class="text-uppercase mt-1">
         <span><img src="/logo.svg" alt="KUSS-WebMap" class="mt-3"></span>
       </v-toolbar-title>
     </v-app-bar>
