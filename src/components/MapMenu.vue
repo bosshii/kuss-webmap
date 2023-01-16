@@ -10,16 +10,10 @@
         </v-list-item>
       </template>
       <v-divider></v-divider>
-      <v-list-item scolor="primary" active-color="primary"  to="/docs">
-        <template v-slot:prepend><v-icon>mdi-note-text</v-icon></template>
+      <v-list-item color="primary" active-color="primary"  to="/help">
+        <template v-slot:prepend><v-icon>mdi-help</v-icon></template>
         <v-list-item-content>
-          <v-list-item-title>資料</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-      <v-list-item scolor="primary" active-color="primary"  to="/">
-        <template v-slot:prepend><v-icon>mdi-arrow-u-left-top</v-icon></template>
-        <v-list-item-content>
-          <v-list-item-title>ログイン画面に戻る</v-list-item-title>
+          <v-list-item-title>使い方</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -27,7 +21,7 @@
       <v-expansion-panel rounded="lg" elevation="0">
         <v-expansion-panel-title>マップメニュー</v-expansion-panel-title>
         <v-expansion-panel-text class="px-4 mx-n8 mb-n3">
-          <v-list rounded="lg">
+          <v-list rounded="lg" density="compact">
             <template v-for="nav_list in nav_lists">
               <v-list-item color="primary" active-color="primary" :to="nav_list.link">
                 <template v-slot:prepend><v-icon :icon="nav_list.icon"></v-icon></template>
@@ -37,16 +31,10 @@
               </v-list-item>
             </template>
             <v-divider></v-divider>
-            <v-list-item scolor="primary" active-color="primary"  to="/docs">
-              <template v-slot:prepend><v-icon>mdi-note-text</v-icon></template>
+            <v-list-item color="primary" active-color="primary"  to="/help">
+              <template v-slot:prepend><v-icon>mdi-help</v-icon></template>
               <v-list-item-content>
-                <v-list-item-title>資料</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item scolor="primary" active-color="primary"  to="/">
-              <template v-slot:prepend><v-icon>mdi-arrow-u-left-top</v-icon></template>
-              <v-list-item-content>
-                <v-list-item-title>ログイン画面に戻る</v-list-item-title>
+                <v-list-item-title>使い方</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list>
@@ -65,7 +53,7 @@ export default {
           {
             page: "マップ ホーム",
             icon: "mdi-home",
-            link: "/home"
+            link: "/map"
           },
           {
             page: "A棟",
@@ -93,14 +81,9 @@ export default {
             link: "/map/e"
           },
           {
-            page: "体育館・中庭など",
-            icon: "mdi-map-search",
+            page: "体育館・その他",
+            icon: "mdi-town-hall",
             link: "/map/others"
-          },
-          {
-            page: "使い方",
-            icon: "mdi-help",
-            link: "/help"
           },
         ],
     }

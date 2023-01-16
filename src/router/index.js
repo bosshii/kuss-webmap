@@ -9,7 +9,7 @@ const routes = [
     component: () => import(/* webpackChunk//name: "about" */ '../views/TopPage.vue')
   },
   {
-    path: '/home',
+    path: '/map',
     name: 'home',
     component: () => import(/* webpackChunk//name: "about" */ '../views/HomePage.vue')
   },
@@ -59,9 +59,9 @@ const routes = [
     component: () => import(/* webpackChunk//name: "about" */ '../views/Navi.vue')
   },
   {
-    path: '/docs',
-    name: 'docs',
-    component: () => import('../views/Docs.vue')
+    path: '/info',
+    name: 'info',
+    component: () => import('../views/Info.vue')
   }
 ]
 
