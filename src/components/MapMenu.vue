@@ -81,8 +81,13 @@ export default {
             link: "/map/e"
           },
           {
-            page: "体育館・その他",
+            page: "体育館",
             icon: "mdi-town-hall",
+            link: "/map/arena"
+          },
+          {
+            page: "中庭周辺",
+            icon: "mdi-widgets-outline",
             link: "/map/others"
           },
         ],

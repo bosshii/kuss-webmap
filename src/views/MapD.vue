@@ -7,8 +7,8 @@
           <v-col cols="12" xs="12" sm="12" md="3" lg="3" xl="3"><MapMenu /></v-col>
           <v-col cols="12" xs="12" sm="12" md="9" lg="9" xl="9">
             <v-sheet min-height="70vh" rounded="lg" class="pa-4">
-              <h1>C棟立体マップ</h1>
-                <v-img class="mb-y15" src="@/assets/map/C.png"></v-img>
+              <h1>D棟立体マップ</h1>
+                <v-img class="mb-y15" src="@/assets/map/D.png"></v-img>
             </v-sheet>
           </v-col>
         </v-row>
