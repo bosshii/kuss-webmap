@@ -11,56 +11,11 @@
             <v-img class="mb-y15" max-width="450px" src="@/assets/map/school_all_text.png"></v-img>
               <v-container>
                 <v-row>
-                  <v-col cols="6" xs="6" sm="4" md="3" lg="3" xl="3">
-                    <v-card class="bg-green-lighten-4" v-ripple>
+                  <v-col v-for="map in maps" cols="6" xs="6" sm="4" md="3" lg="3" xl="3">
+                    <v-card :class="map.class"  :to="map.link" v-ripple>
                       <v-responsive :aspect-ratio="3/2">
                         <v-card-text>
-                          3:2
-                        </v-card-text>
-                      </v-responsive>
-                    </v-card>
-                  </v-col>
-                  <v-col cols="6" xs="6" sm="4" md="3" lg="3" xl="3">
-                    <v-card class="bg-blue-lighten-4" v-ripple>
-                      <v-responsive :aspect-ratio="3/2">
-                        <v-card-text>
-                          3:2
-                        </v-card-text>
-                      </v-responsive>
-                    </v-card>
-                  </v-col>
-                  <v-col cols="6" xs="6" sm="4" md="3" lg="3" xl="3">
-                    <v-card class="bg-pink-lighten-4" v-ripple>
-                      <v-responsive :aspect-ratio="3/2">
-                        <v-card-text>
-                          3:2
-                        </v-card-text>
-                      </v-responsive>
-                    </v-card>
-                  </v-col>
-                  <v-col cols="6" xs="6" sm="4" md="3" lg="3" xl="3">
-                    <v-card class="bg-deep-orange-lighten-2" v-ripple>
-                      <v-responsive :aspect-ratio="3/2">
-                        <v-card-text>
-                          3:2
-                        </v-card-text>
-                      </v-responsive>
-                    </v-card>
-                  </v-col>
-                  <v-col cols="6" xs="6" sm="4" md="3" lg="3" xl="3">
-                    <v-card class="bg-yellow-lighten-3" v-ripple>
-                      <v-responsive :aspect-ratio="3/2">
-                        <v-card-text>
-                          3:2
-                        </v-card-text>
-                      </v-responsive>
-                    </v-card>
-                  </v-col>
-                  <v-col cols="6" xs="6" sm="4" md="3" lg="3" xl="3">
-                    <v-card class="bg-deep-purple-lighten-3" v-ripple>
-                      <v-responsive :aspect-ratio="3/2">
-                        <v-card-text>
-                          3:2
+                          {{ map.text }}
                         </v-card-text>
                       </v-responsive>
                     </v-card>
@@ -79,4 +34,50 @@
   import MainTop from '@/layouts/MainTop.vue'
   import CommonStyles from '@/layouts/CommonStyles.vue'
   import MapMenu from '@/components/MapMenu.vue'
+</script>
+<script>
+export default {
+  name: "top",
+  data(){
+    return{
+      maps: [
+          {
+            class: "bg-green-accent-2",
+            text: "A棟",
+            link: "/map/a"
+          },
+          {
+            class: "bg-blue-lighten-4",
+            text: "B棟",
+            link: "/map/b"
+          },
+          {
+            class: "bg-pink-lighten-4",
+            text: "C棟",
+            link: "/map/c"
+          },
+          {
+            class: "bg-deep-orange-lighten-3",
+            text: "D棟",
+            link: "/map/d"
+          },
+          {
+            class: "bg-yellow-lighten-3",
+            text: "E棟",
+            link: "/map/e"
+          },
+          {
+            class: "bg-deep-purple-lighten-4",
+            text: "アリーナ",
+            link: "/map/arena"
+          },
+          {
+            class: "bg-grey-lighten-4",
+            text: "中庭ほか",
+            link: "/map/others"
+          },
+        ],
+    }
+  }
+}
 </script>

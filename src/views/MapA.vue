@@ -26,5 +26,6 @@
 </template>
 <script setup>
   import MapMenu from '@/components/MapMenu.vue'
+  import CommonStyles from '@/layouts/CommonStyles.vue'
   import MainTop from '@/layouts/MainTop.vue'
 </script>
