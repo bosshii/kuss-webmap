@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer app v-model="drawer" color="blue accent-2" >
+  <v-navigation-drawer app temporary v-model="drawer" color="blue accent-2" >
     <v-list>
       <v-list-subheader style="color:white">メインメニュー</v-list-subheader>
       <v-list-item rounded="xl" value="1" to="/map" v-if="!toppage">
