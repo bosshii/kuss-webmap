@@ -1,4 +1,4 @@
-# base
+# kuss-webmap
 
 ## Project setup
 
@@ -8,12 +8,9 @@ yarn
 
 # npm
 npm install
-
-# pnpm
-pnpm install
 ```
 
-### Compiles and hot-reloads for development
+## Compiles and hot-reloads for development
 
 ```
 # yarn
@@ -21,25 +18,40 @@ yarn dev
 
 # npm
 npm run dev
-
-# pnpm
-pnpm dev
 ```
 
-### Compiles and minifies for production
+## Compiles and minifies for production
 
+### Numbering versions automatically
+Bash required
 ```
 # yarn
 yarn build
 
 # npm
 npm run build
+```
+### Number manually
+Need to update .env before type
+```
+# yarn
+yarn manual-build
 
-# pnpm
-pnpm build
+# npm
+npm run manual-build
 ```
 
-### Lints and fixes files
+## Check before publish
+
+```
+# yarn
+yarn preview
+
+# npm
+npm run preview
+```
+
+## Lints and fixes files
 
 ```
 # yarn
@@ -47,11 +59,4 @@ yarn lint
 
 # npm
 npm run lint
-
-# pnpm
-pnpm lint
 ```
-
-### Customize configuration
-
-See [Configuration Reference](https://vitejs.dev/config/).
