@@ -8,7 +8,7 @@
           <v-col cols="12" xs="12" sm="12" md="9" lg="9" xl="9">
             <v-sheet min-height="70vh" rounded="lg" class="pa-4">
             <h1>KUSSマップ</h1>
-            <v-img class="mb-y15" max-width="450px" src="@/assets/map/school_all_text.png"></v-img>
+            <v-img class="mb-n15" max-width="450px" src="@/assets/map/school_all_text.png"></v-img>
               <v-row>
                 <v-col v-for="map in maps" cols="6" xs="6" sm="4" md="3" lg="3" xl="3">
                   <v-card :class="map.class"  :to="map.link" v-ripple>
@@ -23,14 +23,15 @@
           </v-col>
         </v-row>
       </v-container>
+      <LegendFab />
     </v-main>
   </v-app>
 </template>
-
 <script setup>
   import MainTop from '@/layouts/MainTop.vue'
   import CommonStyles from '@/layouts/CommonStyles.vue'
   import MapMenu from '@/components/MapMenu.vue'
+  import LegendFab from '@/components/LegendFab.vue'
 </script>
 <script>
 export default {

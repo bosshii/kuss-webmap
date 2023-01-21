@@ -13,6 +13,7 @@
           </v-col>
         </v-row>
       </v-container>
+      <LegendFab />
     </v-main>
   </v-app>
 </template>
@@ -20,4 +21,5 @@
   import MapMenu from '@/components/MapMenu.vue'
   import CommonStyles from '@/layouts/CommonStyles.vue'
   import MainTop from '@/layouts/MainTop.vue'
+  import LegendFab from '@/components/LegendFab.vue'
 </script>
