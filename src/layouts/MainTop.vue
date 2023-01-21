@@ -2,7 +2,11 @@
   <v-navigation-drawer app temporary v-model="drawer" color="blue accent-2" >
     <v-list>
       <v-list-subheader style="color:white">メインメニュー</v-list-subheader>
-      <v-list-item rounded="xl" value="1" to="/map" v-if="!toppage">
+      <v-list-item rounded="xl" value="0" to="/map" active v-if="mappage">
+        <template v-slot:prepend><v-icon color="white">mdi-map</v-icon></template>
+        <v-list-item-title>マップ</v-list-item-title>
+      </v-list-item>
+      <v-list-item rounded="xl" value="1" to="/map" v-if="!toppage && !mappage">
         <template v-slot:prepend><v-icon color="white">mdi-map</v-icon></template>
         <v-list-item-title>マップ</v-list-item-title>
       </v-list-item>
@@ -10,7 +14,7 @@
         <template v-slot:prepend><v-icon color="white">mdi-navigation</v-icon></template>
         <v-list-item-title>道案内</v-list-item-title>
       </v-list-item>
-      <v-list-item rounded="xl" value="3" to="#" v-if="toppage">
+      <v-list-item rounded="xl" value="3" to="/a" v-if="toppage">
         <template v-slot:prepend><v-icon>mdi-information-outline</v-icon></template>
         <v-list-item-title>このサイトについて</v-list-item-title>
       </v-list-item>
