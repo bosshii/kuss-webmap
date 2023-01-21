@@ -9,18 +9,16 @@
             <v-sheet min-height="70vh" rounded="lg" class="pa-4">
             <h1>KUSSマップ</h1>
             <v-img class="mb-y15" max-width="450px" src="@/assets/map/school_all_text.png"></v-img>
-              <v-container>
-                <v-row>
-                  <v-col v-for="map in maps" cols="6" xs="6" sm="4" md="3" lg="3" xl="3">
-                    <v-card :class="map.class"  :to="map.link" v-ripple>
-                      <v-responsive :aspect-ratio="3/2">
-                        <v-icon size="large">{{ map.icon }}</v-icon>
-                        <v-card-text>{{ map.text }}</v-card-text>
-                      </v-responsive>
-                    </v-card>
-                  </v-col>
-                </v-row>
-              </v-container>
+              <v-row>
+                <v-col v-for="map in maps" cols="6" xs="6" sm="4" md="3" lg="3" xl="3">
+                  <v-card :class="map.class"  :to="map.link" v-ripple>
+                    <v-responsive :aspect-ratio="3/2">
+                      <v-icon size="large">{{ map.icon }}</v-icon>
+                      <v-card-text>{{ map.text }}</v-card-text>
+                    </v-responsive>
+                  </v-card>
+                </v-col>
+              </v-row>
             </v-sheet>
           </v-col>
         </v-row>

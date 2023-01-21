@@ -35,7 +35,6 @@ const pwaOptions = {
           src: "app-icons/apple-touch-icon.png",
           sizes: "180x180",
           type: "image/png",
-          purpose: 'any maskable'
       }
     ],
     start_url: '/',
