@@ -10,7 +10,7 @@
         <template v-slot:prepend><v-icon color="white">mdi-navigation</v-icon></template>
         <v-list-item-title>道案内</v-list-item-title>
       </v-list-item>
-      <v-list-item rounded="xl" value="3" to="/about" v-if="toppage">
+      <v-list-item rounded="xl" value="3" to="#" v-if="toppage">
         <template v-slot:prepend><v-icon>mdi-information-outline</v-icon></template>
         <v-list-item-title>このサイトについて</v-list-item-title>
       </v-list-item>
@@ -46,7 +46,11 @@
           <v-btn color="primary" v-bind="props" prepend-icon="mdi-chevron-down" variant="outlined">モード</v-btn>
         </template>
         <v-list>
-          <v-list-item to="/map">
+          <v-list-item active v-if="mappage" to="/map">
+            <template v-slot:prepend><v-icon class="mr-n1">mdi-map</v-icon></template>
+            <v-list-item-content><v-list-item-title>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;マップ</v-list-item-title></v-list-item-content>
+          </v-list-item>
+          <v-list-item v-if="!mappage" to="/map">
             <template v-slot:prepend><v-icon class="mr-n1">mdi-map</v-icon></template>
             <v-list-item-content><v-list-item-title>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;マップ</v-list-item-title></v-list-item-content>
           </v-list-item>
@@ -61,7 +65,7 @@
 </template>
 <script>
 export default {
-    props: ['toppage'],
+    props: ['toppage', 'mappage'],
     data: () => ({
           drawer: false,
         }),

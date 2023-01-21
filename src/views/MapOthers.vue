@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-    <MainTop />
+    <MainTop mappage="true"/>
     <v-main class="bg-blue-lighten-5">
       <v-container>
         <v-row>
