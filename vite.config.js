@@ -9,7 +9,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 const pwaOptions = {
   strategies: 'generateSW',
-  registerType: 'prompt',       // デフォルトなので不要
+  registerType: 'prompt',
   manifest: {
     name: 'KUSSウェブマップ',
     short_name: 'KUSSマップ',
@@ -30,10 +30,16 @@ const pwaOptions = {
           sizes: "512x512",
           type: "image/png",
           purpose: 'any maskable'
+      },
+      {
+          src: "app-icons/apple-touch-icon.png",
+          sizes: "180x180",
+          type: "image/png",
+          purpose: 'any maskable'
       }
-    ],             // あとで追加します
-    start_url: 'index.html',
-    display: 'standalone',  // デフォルトなので不要
+    ],
+    start_url: '/',
+    display: 'standalone',
     background_color: '#BBDEFB',
     theme_color: '#40C4FF',
     lang: 'ja',
