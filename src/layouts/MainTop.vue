@@ -35,14 +35,16 @@
         <template v-slot:prepend><v-icon>mdi-arrow-u-left-top</v-icon></template>
         <v-list-item-title>ログイン画面に戻る</v-list-item-title>
       </v-list-item>
+      <v-divider class="my-3"></v-divider>
+      <p class="text-center">ver. {{ version }} ({{ commithash }})</p>
     </v-list>
   </v-navigation-drawer>
   <v-app-bar app flat style="position: fixed;">
     <v-container class="fill-height d-flex align-center">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <span class="text-uppercase black--text ml-2 mt-1 mr-3">
-        <router-link :to=" { name: 'home' } "><img src="/logo.svg" style="width:35vw; max-width:300px" alt="KUSS-WebMap" class="mt-3" v-if="!toppage"></router-link>
-        <img src="/logo.svg" style="width:35vw; max-width:300px" alt="KUSS-WebMap" class="mt-3" v-if="toppage">
+        <router-link :to=" { name: 'home' } "><img src="/logo.svg" style="width:40vw; max-width:300px" alt="KUSS-WebMap" class="mt-3" v-if="!toppage"></router-link>
+        <img src="/logo.svg" style="width:40vw; max-width:300px" alt="KUSS-WebMap" class="mt-3" v-if="toppage">
       </span>
       <v-spacer></v-spacer>
       <v-menu transition="slide-y-transition" v-if="!toppage">
@@ -74,4 +76,8 @@ export default {
           drawer: false,
         }),
 }
+const commithash = import.meta.env.VITE_GIT_COMMIT_HASH;
+</script> 
+<script setup>
+import {version} from '../../package.json';
 </script>

@@ -29,7 +29,12 @@ const pwaOptions = {
           src: "app-icons/android-chrome-512x512.png",
           sizes: "512x512",
           type: "image/png",
-          purpose: 'any maskable'
+      },
+      {
+          src: "app-icons/maskable-512x512.png",
+          sizes: "512x512",
+          type: "image/png",
+          purpose: 'maskable'
       },
       {
           src: "app-icons/apple-touch-icon.png",
