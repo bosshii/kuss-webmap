@@ -6,28 +6,28 @@
         <template v-slot:prepend><v-icon color="white">mdi-map</v-icon></template>
         <v-list-item-title>マップ</v-list-item-title>
       </v-list-item>
-      <v-list-item rounded="xl" value="1" to="/navi" v-if="!toppage">
+      <v-list-item rounded="xl" value="2" to="/navi" v-if="!toppage">
         <template v-slot:prepend><v-icon color="white">mdi-navigation</v-icon></template>
         <v-list-item-title>道案内</v-list-item-title>
       </v-list-item>
-      <v-list-item rounded="xl" value="2" to="/about" v-if="toppage">
+      <v-list-item rounded="xl" value="3" to="/about" v-if="toppage">
         <template v-slot:prepend><v-icon>mdi-information-outline</v-icon></template>
         <v-list-item-title>このサイトについて</v-list-item-title>
       </v-list-item>
-      <v-list-item rounded="xl" value="3" to="/info" v-if="!toppage">
+      <v-list-item rounded="xl" value="4" to="/info" v-if="!toppage">
         <template v-slot:prepend><v-icon>mdi-note-text</v-icon></template>
         <v-list-item-title>このサイトについて</v-list-item-title>
       </v-list-item>  
-      <v-list-item rounded="xl" value="4" href="#">
+      <v-list-item rounded="xl" value="5" href="#">
         <template v-slot:prepend><v-icon>mdi-open-in-new</v-icon></template>
         <v-list-item-title>学校ホームページへ</v-list-item-title>
       </v-list-item>
-      <v-list-item rounded="xl" value="5" href="#">
+      <v-list-item rounded="xl" value="6" href="#">
         <template v-slot:prepend><v-icon>mdi-rabbit</v-icon></template>
         <v-list-item-title>公式ホームページへ</v-list-item-title>
       </v-list-item>
       <v-divider v-if="!toppage"></v-divider>
-      <v-list-item rounded="xl" value="6" to="/" v-if="!toppage">
+      <v-list-item rounded="xl" value="7" to="/" v-if="!toppage">
         <template v-slot:prepend><v-icon>mdi-arrow-u-left-top</v-icon></template>
         <v-list-item-title>ログイン画面に戻る</v-list-item-title>
       </v-list-item>
