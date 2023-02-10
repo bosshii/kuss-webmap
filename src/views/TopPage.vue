@@ -29,7 +29,7 @@
   </v-app>
 </template>
 <script>
-  const password = import.meta.env.local.VITE_APP_PASSWORD;
+  const password = import.meta.env.VITE_APP_PASSWORD;
   export default {
     data: (vm) => ({
       drawer: false,
