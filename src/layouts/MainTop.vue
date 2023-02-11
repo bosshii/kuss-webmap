@@ -14,30 +14,51 @@
         <template v-slot:prepend><v-icon color="white">mdi-navigation</v-icon></template>
         <v-list-item-title>道案内</v-list-item-title>
       </v-list-item>
-      <v-list-item rounded="xl" value="3" to="/a" v-if="toppage">
-        <template v-slot:prepend><v-icon>mdi-information-outline</v-icon></template>
-        <v-list-item-title>このサイトについて</v-list-item-title>
-      </v-list-item>
-      <v-list-item rounded="xl" value="4" to="/info" v-if="!toppage">
-        <template v-slot:prepend><v-icon>mdi-note-text</v-icon></template>
-        <v-list-item-title>このサイトについて</v-list-item-title>
-      </v-list-item>  
-      <v-list-item rounded="xl" value="5" href="#">
+      <v-list-item rounded="xl" value="3" href="#">
         <template v-slot:prepend><v-icon>mdi-open-in-new</v-icon></template>
         <v-list-item-title>学校ホームページへ</v-list-item-title>
       </v-list-item>
-      <v-list-item rounded="xl" value="6" href="#">
+      <v-list-item rounded="xl" value="4" href="#">
         <template v-slot:prepend><v-icon>mdi-rabbit</v-icon></template>
         <v-list-item-title>公式ホームページへ</v-list-item-title>
       </v-list-item>
-      <v-divider v-if="!toppage"></v-divider>
-      <v-list-item rounded="xl" value="7" to="/" v-if="!toppage">
+      <v-divider class="mx-2" v-if="!toppage"></v-divider>
+      <v-list-item rounded="xl" value="5" to="/" v-if="!toppage">
         <template v-slot:prepend><v-icon>mdi-arrow-u-left-top</v-icon></template>
         <v-list-item-title>ログイン画面に戻る</v-list-item-title>
       </v-list-item>
+
       <v-divider class="my-3"></v-divider>
-      <p class="text-center">ver. {{ version }} ({{ commithash }})</p>
+      <p class="text-center">Ver. {{ version }} ({{ commithash }})</p>
+      <div class="mt-1 text-center">
+        <v-dialog transition="dialog-bottom-transition" width="500px">
+          <template v-slot:activator="{ props }">
+            <v-btn class="justify-center text-blue-accent-3" color="white" v-bind="props">このアプリについて</v-btn>
+          </template>
+          <template v-slot:default="{ isActive }">
+            <v-card>
+              <v-toolbar color="primary" title="このアプリについて"></v-toolbar>
+              <v-card-text>
+                <p class="px-1">このWebアプリは校内地図をデジタル化し、気軽に使えるようにしたウェブマップです。ASTA情報班が開発しています。
+                <ul class="ml-2">
+                  <li>バージョン: {{ version }} ({{ commithash }}) [{{ date }}]</li>
+                  <li>動作確認環境: Android/iOS/Windows</li>
+                  <li>問い合わせ: 準備中</li>
+                </ul>
+                </p>
+              </v-card-text>
+              <v-card-actions class="justify-start">
+                <v-btn size="large" icon="mdi-github" color="primary" href="https://github.com/asta-tech" target="_blank"></v-btn>
+              </v-card-actions>
+              <v-card-actions class="justify-end">
+                <v-btn color="primary" variant="text" @click="isActive.value = false">閉じる</v-btn>
+              </v-card-actions>
+            </v-card>
+          </template>
+        </v-dialog>
+      </div>
     </v-list>
+
   </v-navigation-drawer>
   <v-app-bar app flat style="position: fixed;">
     <v-container class="fill-height d-flex align-center">
@@ -74,10 +95,11 @@ export default {
     props: ['toppage', 'mappage'],
     data: () => ({
           drawer: false,
+          aboutapp: false
         }),
 }
 const commithash = import.meta.env.VITE_GIT_COMMIT_HASH;
 </script> 
 <script setup>
-import {version} from '../../package.json';
+import {version, date} from '../../package.json';
 </script>
