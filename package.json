@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "rm .env && bash hash.sh && vite build",
+    "build": "rm .env && bash makeenv.sh && vite build",
     "manual-build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --fix --ignore-path .gitignore"
