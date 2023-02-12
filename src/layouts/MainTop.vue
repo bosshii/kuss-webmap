@@ -95,6 +95,7 @@
   </v-app-bar>
 </template>
 <script>
+const commithash = import.meta.env.VITE_GIT_COMMIT_HASH;
 export default {
     props: ['toppage', 'mappage'],
     data: () => ({
