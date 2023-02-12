@@ -61,7 +61,7 @@
 
   </v-navigation-drawer>
   <v-app-bar app flat style="position: fixed;">
-    <v-container class="fill-height d-flex align-center">
+    <v-container class="d-flex align-center">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <span class="text-uppercase black--text ml-2 mt-1 mr-3">
         <router-link :to=" { name: 'home' } "><img src="/logo.svg" style="width:40vw; max-width:300px" alt="KUSS-WebMap" class="mt-3" v-if="!toppage"></router-link>
