@@ -41,10 +41,14 @@
               <v-card-text>
                 <p class="px-1">このWebアプリは校内地図をデジタル化し、気軽に使えるようにしたウェブマップです。ASTA情報班が開発しています。
                 <ul class="ml-2">
-                  <li>バージョン: {{ version }} ({{ commithash }}) [{{ date }}]</li>
+                  <li>バージョン: {{ version }} ({{ commithash }}) [{{ date }}]<span v-if="version == latest"><v-icon color="success">mdi-check-circle</v-icon>最新バージョンです</span></li>
                   <li>動作確認環境: Android/iOS/Windows</li>
                   <li>問い合わせ: 準備中</li>
                 </ul>
+                <div v-if="version != latest" class="mt-3">
+                  <v-icon color="primary">mdi-wrench</v-icon>最新バージョン [ {{ latest }} ] を利用可能です。再読み込みして更新してください
+                  <v-btn rounded="lg" color="blue-accent-2" flat prepend-icon="mdi-reload" @click="buttonClicked" :loading="loading" :disabled="loading">再読み込み</v-btn>
+                </div>
                 </p>
               </v-card-text>
               <v-card-actions class="justify-start">
@@ -95,11 +99,32 @@ export default {
     props: ['toppage', 'mappage'],
     data: () => ({
           drawer: false,
-          aboutapp: false
+          loading: false,
+          latest: ""
         }),
+    mounted(){
+      axios
+        .get('https://api.github.com/gists/fae77cb33c81403548f9f380d7aae1e8')
+        .then(response => { this.latest = response.data.files["kuss-webmap-latestversion"].content })
+    },
+    methods: {
+        async buttonClicked(){
+          this.loading = true
+          setTimeout(() => (this.loading = false), 3000)
+          await new Promise(resolve => setTimeout(resolve, 3200))
+          alert('新バージョンを起動します')
+          window.navigator.serviceWorker.getRegistrations()
+          .then(registrations => {
+            for(let registration of registrations) {
+              registration.unregister();
+            }
+          });
+          window.location.reload(true);
+        },
+    }
 }
-const commithash = import.meta.env.VITE_GIT_COMMIT_HASH;
 </script> 
 <script setup>
 import {version, date} from '../../package.json';
+import axios from 'axios'
 </script>
