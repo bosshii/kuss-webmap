@@ -10,20 +10,24 @@
         <template v-slot:prepend><v-icon color="white">mdi-map</v-icon></template>
         <v-list-item-title>マップ</v-list-item-title>
       </v-list-item>
-      <v-list-item rounded="xl" value="2" to="/navi" v-if="!toppage">
+      <!--v-list-item rounded="xl" value="2" to="/navi" v-if="!toppage">
         <template v-slot:prepend><v-icon color="white">mdi-navigation</v-icon></template>
         <v-list-item-title>道案内</v-list-item-title>
-      </v-list-item>
-      <v-list-item rounded="xl" value="3" href="#">
+      </v-list-item-->
+      <v-list-item rounded="xl" value="3" href="https://www.edu.kobe-u.ac.jp/kuss-top/">
         <template v-slot:prepend><v-icon>mdi-open-in-new</v-icon></template>
-        <v-list-item-title>学校ホームページへ</v-list-item-title>
+        <v-list-item-title>学校ホームページ</v-list-item-title>
       </v-list-item>
-      <v-list-item rounded="xl" value="4" href="#">
+      <v-list-item rounded="xl" value="4" href="https://togensai.jp">
         <template v-slot:prepend><v-icon>mdi-rabbit</v-icon></template>
-        <v-list-item-title>公式ホームページへ</v-list-item-title>
+        <v-list-item-title>兎原祭ホームページ</v-list-item-title>
+      </v-list-item>
+      <v-list-item rounded="xl" value="5" href="https://asta.group">
+        <template v-slot:prepend><v-icon>mdi-rabbit</v-icon></template>
+        <v-list-item-title>情報班ウェブサイト</v-list-item-title>
       </v-list-item>
       <v-divider class="mx-2" v-if="!toppage"></v-divider>
-      <v-list-item rounded="xl" value="5" to="/" v-if="!toppage">
+      <v-list-item rounded="xl" value="6" to="/" v-if="!toppage">
         <template v-slot:prepend><v-icon>mdi-arrow-u-left-top</v-icon></template>
         <v-list-item-title>ログイン画面に戻る</v-list-item-title>
       </v-list-item>
@@ -39,11 +43,10 @@
             <v-card>
               <v-toolbar color="primary" title="このアプリについて"></v-toolbar>
               <v-card-text>
-                <p class="px-1">このWebアプリは校内地図をデジタル化し、気軽に使えるようにしたウェブマップです。ASTA情報班が開発しています。
+                <p class="px-1">このWebアプリは校内地図をデジタル化し、手軽に使えるようにしたウェブアプリです。ASTA情報班が開発しています。
                 <ul class="ml-2">
-                  <li>バージョン: {{ version }} ({{ commithash }}) [{{ date }}]<span v-if="version == latest"><v-icon color="success">mdi-check-circle</v-icon>最新バージョンです</span></li>
+                  <li>バージョン: {{ version }} ({{ commithash }}) {{ date }}<span v-if="version == latest"><br><v-icon color="success">mdi-check-circle</v-icon>最新バージョンです</span></li>
                   <li>動作確認環境: Android/iOS/Windows</li>
-                  <li>問い合わせ: 準備中</li>
                 </ul>
                 <div v-if="version != latest" class="mt-3">
                   <v-icon color="primary">mdi-wrench</v-icon>最新バージョン [ {{ latest }} ] を利用可能です。再読み込みして更新してください
@@ -53,6 +56,7 @@
               </v-card-text>
               <v-card-actions class="justify-start">
                 <v-btn size="large" icon="mdi-github" color="primary" href="https://github.com/asta-tech" target="_blank"></v-btn>
+                <v-btn size="large" icon="mdi-link-box-variant" color="primary" href="https://asta.group" target="_blank"></v-btn>
               </v-card-actions>
               <v-card-actions class="justify-end">
                 <v-btn color="primary" variant="text" @click="isActive.value = false">閉じる</v-btn>

@@ -43,7 +43,7 @@
     methods: {
       async report (event) {
         const result = await event
-        if (result.valid == true) return alert('正しいパスワードが入力されました。アプリに移動します');
+        //if (result.valid == true) return alert('正しいパスワードが入力されました。アプリに移動します');
         if (result.valid == false) return alert("パスワードが違う、または入力されていません");
         if (!result.valid) return alert('予期せぬエラーが発生しました。やり直してください');
       },
