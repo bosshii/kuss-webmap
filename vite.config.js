@@ -12,7 +12,7 @@ const pwaOptions = {
   registerType: 'prompt',
   manifest: {
     name: 'KUSSウェブマップ',
-    short_name: 'KUSSマップ',
+    short_name: 'マップ',
     description: 'KUSSの校内地図をウェブアプリ化しました',
     icons: [
       {

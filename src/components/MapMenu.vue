@@ -30,13 +30,6 @@
                 </v-list-item-content>
               </v-list-item>
             </template>
-            <v-divider></v-divider>
-            <v-list-item color="primary" active-color="primary"  to="/help">
-              <template v-slot:prepend><v-icon>mdi-help</v-icon></template>
-              <v-list-item-content>
-                <v-list-item-title>使い方</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
           </v-list>
         </v-expansion-panel-text>
       </v-expansion-panel>
