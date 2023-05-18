@@ -8,7 +8,15 @@
           <v-col cols="12" xs="12" sm="12" md="9" lg="9" xl="9">
             <v-sheet min-height="70vh" rounded="lg" class="pa-4">
               <h1>C棟立体マップ</h1>
-                <v-img class="mb-y15" src="@/assets/map/C.png"></v-img>
+                <!--v-img class="mb-y15" src="@/assets/map/C.png"></v-img-->
+                <v-img class="" src="@/assets/map/CR.png"></v-img>
+
+                <v-tabs color="pink accent-2">
+                  <v-tabs-slider color="blue" />
+                  <v-tab>1階</v-tab> 
+                  <v-tab>2階</v-tab>
+                  <v-tab>3階</v-tab>
+                  <v-tab-item><ul><li>a</li></ul>
             </v-sheet>
           </v-col>
         </v-row>
