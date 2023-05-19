@@ -9,13 +9,6 @@
           </v-list-item-content>
         </v-list-item>
       </template>
-      <v-divider></v-divider>
-      <v-list-item color="primary" active-color="primary"  to="/help">
-        <template v-slot:prepend><v-icon>mdi-help</v-icon></template>
-        <v-list-item-content>
-          <v-list-item-title>使い方</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
     </v-list>
     <v-expansion-panels class="hidden-md-and-up elevation-0">
       <v-expansion-panel rounded="lg" elevation="0">
@@ -92,11 +85,6 @@ export default {
             page: "体育館",
             icon: "mdi-town-hall",
             link: "/map/arena"
-          },
-          {
-            page: "中庭周辺",
-            icon: "mdi-widgets-outline",
-            link: "/map/others"
           },
       ],
     }

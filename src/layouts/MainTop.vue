@@ -42,17 +42,25 @@
           <template v-slot:default="{ isActive }">
             <v-card>
               <v-toolbar color="primary" title="このアプリについて"></v-toolbar>
-              <v-card-text>
-                <p class="px-1">このWebアプリは校内地図をデジタル化し、手軽に使えるようにしたウェブアプリです。ASTA情報班が開発しています。
+              <v-card-text><p>このWebアプリは校内地図をデジタル化し、手軽に使えるようにしたウェブアプリです。ASTA情報班が開発しています。
                 <ul class="ml-2">
-                  <li>バージョン: {{ version }} ({{ commithash }}) {{ date }}<span v-if="version == latest"><br><v-icon color="success">mdi-check-circle</v-icon>最新バージョンです</span></li>
+                  <li>クレジット: <ul class="pl-5">
+            <li>Hiro(ASTA情報班前班長) - 発案・全体指揮</li> 
+            <li>H.Y. - 地図イラスト</li>
+            <li>bosshii - 技術支援・サイト制作・サーバー管理</li>
+            <li>また、この他にもたくさんの方にご協力いただきました。<br>
+          この場を借りて感謝申し上げます。</li>
+          </ul></li>
+                  <li>バージョン: {{ version }} ({{ commithash }})<!--span v-if="version == latest"><br><v-icon color="success">mdi-check-circle</v-icon>最新バージョンです</span--></li>
                   <li>動作確認環境: Android/iOS/Windows</li>
                 </ul>
-                <div v-if="version != latest" class="mt-3">
+                <!--div v-if="version != latest" class="mt-3">
                   <v-icon color="primary">mdi-wrench</v-icon>最新バージョン [ {{ latest }} ] を利用可能です。再読み込みして更新してください
                   <v-btn rounded="lg" color="blue-accent-2" flat prepend-icon="mdi-reload" @click="buttonClicked" :loading="loading" :disabled="loading">再読み込み</v-btn>
-                </div>
+                </div-->
                 </p>
+          
+                <v-img src="@/assets/img/ASTAlogo.png"></v-img>
               </v-card-text>
               <v-card-actions class="justify-start">
                 <v-btn size="large" icon="mdi-github" color="primary" href="https://github.com/asta-tech" target="_blank"></v-btn>
@@ -76,7 +84,7 @@
         <img src="/logo.svg" style="width:40vw; max-width:300px" alt="KUSS-WebMap" class="mt-3" v-if="toppage">
       </span>
       <v-spacer></v-spacer>
-      <v-menu transition="slide-y-transition" v-if="!toppage">
+      <!--v-menu transition="slide-y-transition" v-if="!toppage">
         <template v-slot:activator="{ props }">
           <v-btn color="primary" v-bind="props" prepend-icon="mdi-chevron-down" variant="outlined">モード</v-btn>
         </template>
@@ -94,7 +102,7 @@
             <v-list-item-content><v-list-item-title>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;道案内</v-list-item-title></v-list-item-content>
           </v-list-item>
         </v-list>
-      </v-menu>
+      </v-menu-->
     </v-container>
   </v-app-bar>
 </template>

@@ -8,7 +8,26 @@
           <v-col cols="12" xs="12" sm="12" md="9" lg="9" xl="9">
             <v-sheet min-height="70vh" rounded="lg" class="pa-4">
               <h1>D棟立体マップ</h1>
-                <v-img class="mb-y15" src="@/assets/map/D.png"></v-img>
+                <!--v-img class="mb-y15" src="@/assets/map/C.png"></v-img-->
+                <v-img class="" src="@/assets/map/DR.png" max-width="500px"></v-img>
+              <v-tabs v-model="tab" bg-color="blue-lighten-2">
+                <v-tab value="one">1階</v-tab>
+                <v-tab value="two">2階</v-tab>
+                <v-tab value="three">3階</v-tab>
+              </v-tabs>
+              <v-window v-model="tab">
+                <v-window-item value="one">
+                  <ul><li>★　ラーナーズアゴラ・小アゴラ 一般向け飲食スペース</li><li>①　フードドライブ</li><li>②　ASTA</li><li>②　美術部缶バッジ</li></ul>
+                </v-window-item>
+
+                <v-window-item value="two">
+                  <ul><li>①　FINDとげもん</li><li>②　大逆転カジノ</li><li>③　文芸同好会</li><li>④　アリスのティータイム</li></ul>
+                </v-window-item>
+
+                <v-window-item value="three">
+                  <ul><li>①　ESS</li><li>②　PC部</li><li>②　DesperateCXIX</li></ul>
+                </v-window-item>
+              </v-window>
             </v-sheet>
           </v-col>
         </v-row>
@@ -22,4 +41,11 @@
   import CommonStyles from '@/layouts/CommonStyles.vue'
   import MainTop from '@/layouts/MainTop.vue'
   import LegendFab from '@/components/LegendFab.vue'
+</script>
+<script>
+  export default {
+    data: () => ({
+      tab: null,
+    }),
+  }
 </script>

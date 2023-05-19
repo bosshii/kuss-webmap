@@ -9,14 +9,25 @@
             <v-sheet min-height="70vh" rounded="lg" class="pa-4">
               <h1>C棟立体マップ</h1>
                 <!--v-img class="mb-y15" src="@/assets/map/C.png"></v-img-->
-                <v-img class="" src="@/assets/map/CR.png"></v-img>
+                <v-img class="" src="@/assets/map/CR.png" max-width="500px"></v-img>
+              <v-tabs v-model="tab" bg-color="blue-lighten-2">
+                <v-tab value="one">1階</v-tab>
+                <v-tab value="two">2階</v-tab>
+                <v-tab value="three">3階</v-tab>
+              </v-tabs>
+              <v-window v-model="tab">
+                <v-window-item value="one">
+                  <ul><li>★　購買</li><li>①　(雨天時)文芸同好会</li><li>②　適性検査</li></ul>
+                </v-window-item>
 
-                <v-tabs color="pink accent-2">
-                  <v-tabs-slider color="blue" />
-                  <v-tab>1階</v-tab> 
-                  <v-tab>2階</v-tab>
-                  <v-tab>3階</v-tab>
-                  <v-tab-item><ul><li>a</li></ul>
+                <v-window-item value="two">
+                  <ul><li>①　呪念病棟</li><li>②　HATリゾート</li></ul>
+                </v-window-item>
+
+                <v-window-item value="three">
+                  <ul><li>①　家庭科展示</li></ul>
+                </v-window-item>
+              </v-window>
             </v-sheet>
           </v-col>
         </v-row>
@@ -30,4 +41,11 @@
   import CommonStyles from '@/layouts/CommonStyles.vue'
   import MainTop from '@/layouts/MainTop.vue'
   import LegendFab from '@/components/LegendFab.vue'
+</script>
+<script>
+  export default {
+    data: () => ({
+      tab: null,
+    }),
+  }
 </script>
