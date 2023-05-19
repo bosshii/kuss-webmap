@@ -26,11 +26,11 @@
         <template v-slot:prepend><v-icon>mdi-rabbit</v-icon></template>
         <v-list-item-title>情報班ウェブサイト</v-list-item-title>
       </v-list-item>
-      <v-divider class="mx-2" v-if="!toppage"></v-divider>
+      <!--v-divider class="mx-2" v-if="!toppage"></v-divider>
       <v-list-item rounded="xl" value="6" to="/" v-if="!toppage">
         <template v-slot:prepend><v-icon>mdi-arrow-u-left-top</v-icon></template>
         <v-list-item-title>ログイン画面に戻る</v-list-item-title>
-      </v-list-item>
+      </v-list-item-->
 
       <v-divider class="my-3"></v-divider>
       <p class="text-center">Ver. {{ version }} ({{ commithash }})</p>

@@ -3,10 +3,9 @@
     <MainTop toppage="true"/>
     <v-main class="mb-4" style="background-color:#f1f3f5">
       <v-container class="my-3">
-        <v-alert class="mb-2 bg-white" border="start" color="light-blue-accent-4" icon="mdi-bullhorn" title="ようこそ！" variant="tonal">
-          閲覧にはパスワードが必要です。入場受付でお配りした紙をご用意ください。
-        </v-alert>
-        <v-alert class="my-1 mx-auto font-weight-bold bg-white" max-width="400" density="compact" type="info" variant="outlined">本サイトは現在データの移行中です。しばらくお待ちください。</v-alert>  
+        <!--v-alert class="mb-2 bg-white" border="start" color="light-blue-accent-4" icon="mdi-bullhorn" title="ようこそ！" variant="tonal">
+          閲覧にはパスワードが必要です。
+        </v-alert-->
         <v-card class="mx-auto pa-4" max-width="400">
           <v-card-title class="d-flex font-weight-bold justify-center pa-0 mb-2">ログイン</v-card-title>
           <v-form validate-on="submit" @submit.prevent="report">

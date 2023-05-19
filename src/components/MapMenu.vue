@@ -86,6 +86,11 @@ export default {
             icon: "mdi-town-hall",
             link: "/map/arena"
           },
+          {
+            page: "中庭周辺",
+            icon: "mdi-widgets-outline",
+            link: "/map/others"
+          },
       ],
     }
   }
