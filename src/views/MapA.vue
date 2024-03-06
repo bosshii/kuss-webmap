@@ -9,7 +9,6 @@
             <v-sheet min-height="70vh" rounded="lg" class="pa-4">
               <h1>A棟立体マップ</h1>
                 <p>※A棟は3階のみ使用します。</p>
-                <!--v-img class="mb-y15" src="@/assets/map/C.png"></v-img-->
                 <v-img class="" src="@/assets/map/A3R.png" max-width="500px"></v-img>
               <v-tabs v-model="tab" bg-color="blue-lighten-2">
                 <!--v-tab value="one">1階</v-tab>
@@ -17,14 +16,6 @@
                 <v-tab value="three">3階</v-tab>
               </v-tabs>
               <v-window v-model="tab">
-                <!--v-window-item value="one">
-                  <ul><li>★　購買</li><li>①　(雨天時)文芸同好会</li><li>②　適性検査</li></ul>
-                </v-window-item>
-
-                <v-window-item value="two">
-                  <ul><li>①　呪念病棟</li><li>②　HATリゾート</li></ul>
-                </v-window-item-->
-
                 <v-window-item value="three">
                   <ul><li>★　音楽室</li></ul>
                 </v-window-item>

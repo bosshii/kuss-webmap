@@ -9,7 +9,6 @@
             <v-sheet min-height="70vh" rounded="lg" class="pa-4">
               <h1>B棟立体マップ</h1>
                 <p>※B棟に1階はありません。兎原祭中は3階のみ使用します。</p>
-                <!--v-img class="mb-y15" src="@/assets/map/C.png"></v-img-->
                 <v-img class="" src="@/assets/map/BR.png" max-width="500px"></v-img>
               <v-tabs v-model="tab" bg-color="blue-lighten-2">
                 <v-tab value="three">3階</v-tab>

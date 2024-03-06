@@ -1,5 +1,5 @@
 # kuss-webmap
-電子地図。
+電子地図。https://webmap.asta.bosshii.com @asta-tech
 
 ## Project setup
 - コマンドの都合上Linux(もしくはWindowsではGit Bash)でのみ動きます

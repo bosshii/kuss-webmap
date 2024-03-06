@@ -64,7 +64,7 @@
               </v-card-text>
               <v-card-actions class="justify-start">
                 <v-btn size="large" icon="mdi-github" color="primary" href="https://github.com/asta-tech" target="_blank"></v-btn>
-                <v-btn size="large" icon="mdi-link-box-variant" color="primary" href="https://asta.group" target="_blank"></v-btn>
+                <v-btn size="large" icon="mdi-link-box-variant" color="primary" href="https://asta.bosshii.com" target="_blank"></v-btn>
               </v-card-actions>
               <v-card-actions class="justify-end">
                 <v-btn color="primary" variant="text" @click="isActive.value = false">閉じる</v-btn>

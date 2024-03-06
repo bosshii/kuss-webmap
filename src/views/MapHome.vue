@@ -6,6 +6,7 @@
         <v-row>
           <v-col cols="12" xs="12" sm="12" md="3" lg="3" xl="3"><MapMenu /></v-col>
           <v-col cols="12" xs="12" sm="12" md="9" lg="9" xl="9">
+            <v-alert class="mb-4 bg-white" border="start" type="warning" icon="mdi-bullhorn">本サイトはアーカイブです。掲載している内容は2023年時点のものです。</v-alert>
             <v-sheet min-height="70vh" rounded="lg" class="pa-4">
               <h1>KUSSマップ</h1>
               <v-img class="" max-width="450px" src="@/assets/map/school_all_text.png"></v-img>
@@ -19,7 +20,7 @@
                   </v-card>
                 </v-col>
               </v-row>
-              <v-alert class="mb-2 bg-white" border="start" color="light-blue-accent-4" icon="mdi-bullhorn" variant="tonal">各企画の詳細についてはパンフレットまたは<a href="https://togensai.jp">兎原祭ホームページ</a>をご覧ください。</v-alert>
+              <v-alert class="mt-4 mb-2 bg-white" border="start" color="light-blue-accent-4" icon="mdi-bullhorn" variant="tonal">各企画の詳細についてはパンフレットまたは<a href="https://togensai.jp">兎原祭ホームページ</a>をご覧ください。</v-alert>
             </v-sheet>
           </v-col>
         </v-row>

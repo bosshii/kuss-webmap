@@ -8,7 +8,6 @@
           <v-col cols="12" xs="12" sm="12" md="9" lg="9" xl="9">
             <v-sheet min-height="70vh" rounded="lg" class="pa-4">
               <h1>E棟立体マップ</h1>
-                <!--v-img class="mb-y15" src="@/assets/map/C.png"></v-img-->
                 <v-img class="" src="@/assets/map/ER.png" max-width="500px"></v-img>
               <v-tabs v-model="tab" bg-color="blue-lighten-2">
                 <v-tab value="one">1階</v-tab>

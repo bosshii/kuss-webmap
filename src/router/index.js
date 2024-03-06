@@ -50,11 +50,6 @@ const routes = [
     path: '/navi',
     name: 'navi',
     component: () => import( '../views/Navi.vue')
-  },
-  {
-    path: '/info',
-    name: 'info',
-    component: () => import('../views/Info.vue')
   }
 ]
 

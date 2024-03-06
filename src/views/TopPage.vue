@@ -3,9 +3,9 @@
     <MainTop toppage="true"/>
     <v-main class="mb-4" style="background-color:#f1f3f5">
       <v-container class="my-3">
-        <!--v-alert class="mb-2 bg-white" border="start" color="light-blue-accent-4" icon="mdi-bullhorn" title="ようこそ！" variant="tonal">
-          閲覧にはパスワードが必要です。
-        </v-alert-->
+        <v-alert class="mb-4 bg-white" border="start" type="warning" icon="mdi-bullhorn">
+          本サイトはアーカイブです。掲載している内容は2023年時点のものです。
+        </v-alert>
         <v-card class="mx-auto pa-4" max-width="400">
           <v-card-title class="d-flex font-weight-bold justify-center pa-0 mb-2">ログイン</v-card-title>
           <v-form validate-on="submit" @submit.prevent="report">
